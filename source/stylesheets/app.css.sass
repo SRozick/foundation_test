@@ -1,0 +1,182 @@
+@import "settings"
+@import "foundation.scss"
+
+// Style Guide for Inherent Knowledge
+/* Stylesheet guide
+ *
+ * Contents:
+   * Guidelines (not compiled into end product)
+   * Variable calls
+   * Color Pallete
+   * Color assignments
+   * Typography- fonts
+   * Typography- sizing and spacing rules
+   * Style rules- Elements @ mobile
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media medium-up
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media ultra-large-up
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name)
+   * @media print
+     * Typography- sizing and spacing rules
+     * Primary HTML
+     * Classes, alphabetical (by first class appearing for nests)
+     * Specific identifiers (ie, #name) */
+  // [END TOC]
+
+// Guidelines (not compiled into end product)
+
+// Inherent Knowledge endeavors to be a professional, competent web design firm
+// with strong knowledge of business principles.  Inherent Knowledge demonstrates
+// an appreciation of the costs involved in time spent as well as the rewards
+//  of great design.
+
+// Inherent Knowledge's logo is based on the Breaking Bad logo.
+  // It's owner and principle designer looks like a main character.
+  // The rebel/ do-it-yourself aspect of Breaking Bad should appeal to ideal
+  // customers.
+  // The chemistry symbols invoke the principles of "good chemistry", knowledge,
+  // innovation, scientific method.
+  // Symbols for Indium and Potassium invoke the meeting between science, nature,
+  // and technology to make a greater whole.
+
+// All design must adopt a mobile-first philosophy.  As of 2014, the iPhone 4 shall be
+  // considered the "authoritative" mobile device, although design must respect
+  // the iPhone 3.  Spacing should be sufficient to appear properly formatted on
+  // the Galaxy S4 and iPhone 5/6.
+
+  // On mobile, single-column main content is expected with a collapsible sidebar.
+  // On larger displays, main content can expand up to 3 columns wide with helper
+  // sidebars on either side.
+
+  // Follow a scroll-down approach rather than a click-through approach wherever
+  // possible.
+
+/* Variable calls */
+  // set root font size
+  $base_font: 16px // This is reflected in foundation style configuration; not authoritative here.
+
+
+/* Color Pallete
+  * Natural blues, lightest to darkest */
+  $sky_blue:        #88AADD
+  $sky_violet:      #8888AA
+  $sky_light:       #CCDDEE
+  $sky_dark:        #556677
+
+  /* Natural greens, lightest to darkest */
+  $sage:            #99AA88
+  $tom_thumb:       #445533
+  $evergreen:       #334400
+  $grass:           #99AA44
+  // $grass2: #99AA00
+  // $olive: #667700
+
+  /* Yellow-gold, lightest to darkest */
+  $rob_roy:         #EECC77
+  $goldenrod:       #EECC00
+  $nugget:          #CC9922
+  $chelsea_gem:     #995500
+
+  /* Natural tans instead of black-grey-white */
+  $albescent_white: #EEEECC // use for white
+  $clam_shell:      #CCBBAA // light-on-dark
+  $pale_oyster:     #998877 // darker light on dark
+  $sepia            #776644 // lighter dark on light
+  $saddle_leather:  #443322 // light dark on light
+  $wood_bark:       #221100 // dark/ black
+
+/* Typography- sizing and spacing rules: */
+
+body
+  font-size:        100%
+
+body, h1, h2, h3, h4, h5, h6
+  font-size-adjust: 0.5         //SET THIS AS PER PRIMARY TYPEFACE, TEST IN FIREFOX ONLY
+
+#page
+  font-size:        1em         // 16px
+  line-height:      1.25        // 20px base
+
+h1
+  font-size:        2em         // 32px
+  line-height:      1.25        // 45px //todo: test if this can come out (#page)
+
+h2
+  font-size:        1.625em     // 26px
+  line-height:      1.15384615  // 30px
+
+h3
+  font-size:        1.375em     // 22px
+  line-height:      1.13636364  // 25px
+
+h4
+  font-size:        1.125em     // 18px
+  line-height:      1.11111111  // 20px
+
+blockquote
+  font-size:        1.25em      // 20px
+  line-height:      1.25        // 25px //todo: test if this can come out (#page)
+
+/* Style rules- Elements @ mobile */
+  /* Primary HTML */
+header
+  @include grid-row
+  .logo
+    @include grid-column($columns:3, $center:true)
+  padding-bottom: em-calc(10px)
+
+
+.main-content
+  @include grid-row
+  aside
+    @include grid-column($columns:6)
+  article
+    @include grid-column($columns:6)
+
+
+/* @media medium-up */
+@media(min-width: rem-calc(700px))
+  /* Typography- sizing and spacing rules: */
+  #page
+    font-size:      1em         // 16px
+    line-height:    1.375       // 22px
+  h1
+    font-size:      2.5em       // 40px
+    line-height:    1.125       // 45px
+
+  h2
+    font-size:      2em         // 32px
+    line-height:    1.25        // 40px
+
+  h3
+    font-size:      1.5em       // 24px
+    line-height:    1.25        // 30px
+
+  h4
+    line-height:    1.22222222  // 22px
+
+  blockquote
+    font-size:      1.5em       // 24px
+    line-height:    1.45833333  // 35px
+
+/* @media ultra-large-up */
+@media(min-width: rem-calc(900px))
+  /* Typography- sizing and spacing rules: */
+  h1
+    font-size:      3em         // 48px
+    line-height:    1.041666667 // 50px
+
+  h2
+    font-size:      2.25em      //36px
+
+  h3
+    font-size:      1.75em      //28px
