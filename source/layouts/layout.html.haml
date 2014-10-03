@@ -9,8 +9,7 @@
     = stylesheet_link_tag "app", "style"
     = javascript_include_tag "modernizr"
 
-  %body
-    -# (class="<%= page_classes %>")
-    This is a test from layout.html.haml.
-    = yield
+  %body(class="<%= page_classes %>")
+    .background
+      = yield
     = javascript_include_tag  "all"
